@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.UpdateStatusActivity">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/update_status_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorPrimary"
+        android:minHeight="?android:attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/update_status_current_status_button"/>
+
+    <Button
+        android:id="@+id/update_status_current_status_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimaryForButton"
+        android:text="@string/current_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_status_toolbar" />
+
+    <View
+        android:id="@+id/update_status_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update_status_current_status_button" />
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/update_status_divider"
+        app:layout_constraintBottom_toTopOf="@id/update_status_confirm_button">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/update_status_new_status_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="@string/new_status"
+                android:layout_centerHorizontal="true"/>
+
+            <Spinner
+                android:id="@+id/update_status_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="0dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_bg"
+                android:layout_below="@+id/update_status_new_status_textview"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/update_status_description_textinputlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_bg"
+                android:inputType="textMultiLine"
+                android:layout_below="@id/update_status_spinner"
+
+                android:paddingTop="4dp" >
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/update_status_description_textinputedittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/status_description"
+                    android:inputType="textMultiLine"
+                    android:maxLines="6"
+                    android:minLines="1"
+                    android:textColorHighlight="@color/white"
+
+                    android:background="@android:color/transparent"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="14dp"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/update_status_description_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_alignStart="@+id/update_status_description_textinputlayout"
+                android:layout_below="@+id/update_status_description_textinputlayout"
+                android:text="@string/empty" />
+
+            <TextView
+                android:id="@+id/update_status_description_character_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="14dp"
+                android:layout_alignEnd="@+id/update_status_description_textinputlayout"
+                android:layout_below="@+id/update_status_description_textinputlayout"
+                android:text="@string/empty" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/update_status_duration_textinputlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:inputType="textPersonName"
+                android:background="@drawable/edittext_bg"
+                android:layout_below="@id/update_status_description_textinputlayout"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="4dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/update_status_duration_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/duration"
+                    android:inputType="textPersonName"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="14dp"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/update_status_duration_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_alignStart="@+id/update_status_duration_textinputlayout"
+                android:layout_below="@+id/update_status_duration_textinputlayout"
+                android:text="@string/empty" />
+
+            <Button
+                android:id="@+id/update_status_groups_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/pick_groups"
+                android:background="@drawable/round_button"
+                android:textColor="@color/white"
+                android:padding="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/update_status_duration_textinputlayout"/>
+
+            <TextView
+                android:id="@+id/update_status_groups_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/groups_colon"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/update_status_groups_button"/>
+
+            <TextView
+                android:id="@+id/update_status_grouplist_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/empty"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/update_status_groups_textview"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/update_status_confirm_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimaryForButton"
+        android:text="@string/update_status"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/update_status_cancel_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/update_status_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:stateListAnimator="@null"
+        android:background="@color/real_background"
+        android:text="@string/cancel_literal_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/update_status_progressbar_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

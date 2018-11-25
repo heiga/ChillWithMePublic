@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/popup_window_background">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <NumberPicker
+        android:id="@+id/duration_hour_number_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@id/duration_popup_window_return_button"
+        app:layout_constraintEnd_toStartOf="@+id/duration_hours_textview"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/duration_hours_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/hours"
+        app:layout_constraintBottom_toBottomOf="@id/duration_hour_number_picker"
+        app:layout_constraintEnd_toStartOf="@+id/duration_popup_vertical_guideline"
+        app:layout_constraintTop_toTopOf="@id/duration_hour_number_picker" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/duration_popup_vertical_guideline"
+        android:layout_height="match_parent"
+        android:layout_width="1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <NumberPicker
+        android:id="@+id/duration_minutes_number_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@id/duration_popup_window_return_button"
+        app:layout_constraintStart_toStartOf="@+id/duration_popup_vertical_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/duration_minutes_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/minutes"
+        app:layout_constraintBottom_toBottomOf="@+id/duration_minutes_number_picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintStart_toEndOf="@+id/duration_minutes_number_picker"
+        app:layout_constraintTop_toTopOf="@+id/duration_minutes_number_picker" />
+
+    <Button
+        android:id="@+id/duration_popup_window_return_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimaryForButton"
+        android:text="@string/return_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

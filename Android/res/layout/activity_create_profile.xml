@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CreateProfileActivity">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/create_profile_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorPrimary"
+        android:minHeight="?android:attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/create_profile_introduction_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/create_profile_introduction"
+        app:layout_constraintTop_toBottomOf="@+id/create_profile_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/create_profile_description_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="@string/create_profile_introduction_description"
+        app:layout_constraintTop_toBottomOf="@+id/create_profile_introduction_textview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/create_profile_username_textinputlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:background="@drawable/edittext_bg"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_profile_description_textview"
+        android:paddingTop="6dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/create_profile_username_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/create_profile_username_edittext"
+            android:inputType="textPersonName"
+            android:background="@android:color/transparent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="16dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/create_profile_username_error_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/empty"
+        android:textColor="@color/red"
+        android:paddingStart="16dp"
+        app:layout_constraintStart_toStartOf="@id/create_profile_username_textinputlayout"
+        app:layout_constraintTop_toBottomOf="@id/create_profile_username_textinputlayout"/>
+
+    <TextView
+        android:id="@+id/create_profile_username_character_count_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:paddingEnd="16dp"
+        android:text="@string/empty"
+        app:layout_constraintEnd_toEndOf="@+id/create_profile_username_textinputlayout"
+        app:layout_constraintTop_toBottomOf="@+id/create_profile_username_textinputlayout" />
+
+    <TextView
+        android:id="@+id/create_profile_terms_of_service_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        android:text="@string/create_profile_you_agree"
+        app:layout_constraintTop_toBottomOf="@+id/create_profile_username_textinputlayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/create_profile_confirmation_button"
+        android:layout_width="0dp"
+        android:layout_height="64sp"
+        android:layout_weight="3"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/create_profile_confirm_button"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimaryForButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/create_profile_cancel_button" />
+
+    <Button
+        android:id="@+id/create_profile_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="64sp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16sp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/cancel_literal_text"
+        android:background="@color/real_background"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/create_profile_confirmation_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/create_profile_screen_spinner"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
